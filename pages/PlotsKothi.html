@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agastyaan Real Estate</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-w-[320px]">
+
+<div id="navbar"></div>
+
+<!-- ✅ HERO SECTION -->
+<section class="relative overflow-hidden bg-gray-900 text-white">
+
+  <div class="absolute bottom-[-100px] right-[-100px] w-[300px] h-[300px] bg-yellow-500 opacity-30 blur-3xl rounded-full"></div>
+
+  <!-- px-10 → px-5 md:px-10 | py-20 → py-12 md:py-20 -->
+  <div class="flex flex-col md:flex-row items-center justify-between px-5 md:px-10 py-12 md:py-20 gap-8 relative z-10">
+
+    <!-- Left -->
+    <div class="w-full md:w-1/2 backdrop-blur-lg bg-white/10 p-6 md:p-8 rounded-2xl shadow-xl">
+      <!-- text-4xl → text-3xl on mobile -->
+      <h2 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">
+        Find Your <span class="text-yellow-400">Dream Home</span>
+      </h2>
+      <p class="text-gray-300 mb-6 text-sm md:text-base">
+        Buy, rent, or sell properties easily with Agastyaan Real Estate.
+        Discover premium homes with the best deals in your city.
+      </p>
+      <!-- Buttons full width on mobile -->
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="#explore-section" class="text-center bg-gradient-to-r from-blue-500 to-yellow-500 px-6 py-2 rounded-lg shadow-lg hover:scale-105 transition">
+          Explore
+        </a>
+        <a href="/components/contactus.html" class="text-center border border-white/30 px-6 py-2 rounded-lg hover:bg-white/10 transition">
+          Contact
+        </a>
+      </div>
+    </div>
+
+    <!-- Right — image chhoti screen pe thodi chhoti -->
+    <div class="w-full md:w-1/2 relative">
+      <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg"
+           class="rounded-2xl shadow-2xl hover:scale-105 transition duration-500 w-full max-h-64 md:max-h-full object-cover">
+      <div class="absolute bottom-3 left-3 bg-white/20 backdrop-blur-md px-3 py-1 rounded-xl text-xs md:text-sm">
+        ⭐ 4.8 Rating
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ✅ FEATURED PROPERTIES -->
+<section id="explore-section" class="px-4 md:px-10 py-10">
+
+  <h3 class="text-2xl font-bold mb-6">Featured Properties</h3>
+
+  <!-- Desktop: slider with arrows | Mobile: vertical stack -->
+
+  <!-- MOBILE: simple vertical stack (no slider arrows) -->
+  <div class="flex flex-col gap-6 md:hidden">
+
+    <!-- Kothi 1 -->
+    <div class="bg-white rounded-xl shadow-md">
+      <img src="/assets/images/kothi.jpeg" class="rounded-t-xl w-full h-48 object-cover">
+      <div class="p-4">
+        <div class="flex items-center justify-between mb-2">
+          <span class="bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-full">FOR SALE</span>
+          <span class="text-xs text-gray-400">🌳 Park Facing</span>
+        </div>
+        <h4 class="font-bold text-lg">3 BHK Kothi</h4>
+        <p class="text-gray-500 text-sm">📍 Global City, Sector 124</p>
+        <div class="mt-2 flex flex-wrap gap-2 text-xs text-gray-600">
+          <span class="bg-gray-100 px-2 py-1 rounded">📐 100 Sq.Yards</span>
+          <span class="bg-gray-100 px-2 py-1 rounded">🌇 West Facing</span>
+          <span class="bg-gray-100 px-2 py-1 rounded">🛏️ 3 BHK</span>
+        </div>
+        <p class="text-yellow-500 font-bold text-lg mt-3">💰 ₹90 Lakhs</p>
+        <a href="tel:+916230466624">
+          <button class="mt-3 w-full bg-black text-yellow-400 py-2 rounded-lg hover:bg-gray-800 transition text-sm font-semibold">
+            📞 Call: 6230466624
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <!-- Kothi 2 -->
+    <div class="bg-white rounded-xl shadow-md">
+      <img src="/assets/images/kothi2.jpeg" class="rounded-t-xl w-full h-48 object-cover">
+      <div class="p-4">
+        <div class="flex items-center justify-between mb-2">
+          <span class="bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-full">FOR SALE</span>
+          <span class="text-xs text-gray-400">🏘️ Gated Society</span>
+        </div>
+        <h4 class="font-bold text-lg">3 BHK Kothi</h4>
+        <p class="text-gray-500 text-sm">📍 Kurali, On Highway</p>
+        <div class="mt-2 flex flex-wrap gap-2 text-xs text-gray-600">
+          <span class="bg-gray-100 px-2 py-1 rounded">📐 100 Gaj</span>
+          <span class="bg-gray-100 px-2 py-1 rounded">📏 20 × 45</span>
+          <span class="bg-gray-100 px-2 py-1 rounded">🛏️ 3 BHK</span>
+        </div>
+        <p class="text-yellow-500 font-bold text-lg mt-3">💰 ₹70 Lakhs</p>
+        <a href="tel:+916230466624">
+          <button class="mt-3 w-full bg-black text-yellow-400 py-2 rounded-lg hover:bg-gray-800 transition text-sm font-semibold">
+            📞 Call: 6230466624
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 1 -->
+    <div class="bg-white rounded-xl shadow-md">
+      <img src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg" class="rounded-t-xl w-full h-48 object-cover">
+      <div class="p-4">
+        <h4 class="font-semibold">Luxury Villa</h4>
+        <p class="text-gray-500">₹1.2 Cr - Delhi</p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-white rounded-xl shadow-md">
+      <img src="https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg" class="rounded-t-xl w-full h-48 object-cover">
+      <div class="p-4">
+        <h4 class="font-semibold">Modern Apartment</h4>
+        <p class="text-gray-500">₹80 Lakh - Mumbai</p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-white rounded-xl shadow-md">
+      <img src="https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg" class="rounded-t-xl w-full h-48 object-cover">
+      <div class="p-4">
+        <h4 class="font-semibold">Family House</h4>
+        <p class="text-gray-500">₹60 Lakh - Jaipur</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- DESKTOP: original slider with arrows -->
+  <div class="relative max-w-6xl mx-auto hidden md:block">
+
+    <button onclick="slideLeft()" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white w-10 h-10 rounded-full shadow flex items-center justify-center">
+      <span class="material-symbols-rounded text-lg">arrow_back_ios</span>
+    </button>
+
+    <div id="slider" class="flex gap-6 overflow-x-hidden scroll-smooth px-12">
+
+      <div class="card min-w-[300px] bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition duration-300">
+        <img src="/assets/images/kothi.jpeg" class="rounded-t-xl w-full h-48 object-cover">
+        <div class="p-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-full">FOR SALE</span>
+            <span class="text-xs text-gray-400">🌳 Park Facing</span>
+          </div>
+          <h4 class="font-bold text-lg">3 BHK Kothi</h4>
+          <p class="text-gray-500 text-sm">📍 Global City, Sector 124</p>
+          <div class="mt-2 flex flex-wrap gap-2 text-xs text-gray-600">
+            <span class="bg-gray-100 px-2 py-1 rounded">📐 100 Sq.Yards</span>
+            <span class="bg-gray-100 px-2 py-1 rounded">🌇 West Facing</span>
+            <div class="w-full"></div>
+            <span class="bg-gray-100 px-2 py-1 rounded">🛏️ 3 BHK</span>
+          </div>
+          <p class="text-yellow-500 font-bold text-lg mt-3">💰 ₹90 Lakhs</p>
+          <a href="tel:+916230466624">
+            <button class="mt-3 w-full bg-black text-yellow-400 py-2 rounded-lg hover:bg-gray-800 transition text-sm font-semibold">
+              📞 Call: 6230466624
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <div class="card min-w-[300px] bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition duration-300">
+        <img src="/assets/images/kothi2.jpeg" class="rounded-t-xl w-full h-48 object-cover">
+        <div class="p-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-full">FOR SALE</span>
+            <span class="text-xs text-gray-400">🏘️ Gated Society</span>
+          </div>
+          <h4 class="font-bold text-lg">3 BHK Kothi</h4>
+          <p class="text-gray-500 text-sm">📍 Kurali, On Highway</p>
+          <div class="mt-2 flex flex-wrap gap-2 text-xs text-gray-600">
+            <span class="bg-gray-100 px-2 py-1 rounded">📐 100 Gaj</span>
+            <span class="bg-gray-100 px-2 py-1 rounded">📏 20 × 45</span>
+            <div class="w-full"></div>
+            <span class="bg-gray-100 px-2 py-1 rounded">🛏️ 3 BHK</span>
+          </div>
+          <p class="text-yellow-500 font-bold text-lg mt-3">💰 ₹70 Lakhs</p>
+          <a href="tel:+916230466624">
+            <button class="mt-3 w-full bg-black text-yellow-400 py-2 rounded-lg hover:bg-gray-800 transition text-sm font-semibold">
+              📞 Call: 6230466624
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <div class="card min-w-[300px] bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition duration-300">
+        <img src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg" class="rounded-t-xl w-full h-48 object-cover">
+        <div class="p-4">
+          <h4 class="font-semibold">Luxury Villa</h4>
+          <p class="text-gray-500">₹1.2 Cr - Delhi</p>
+        </div>
+      </div>
+
+      <div class="card min-w-[300px] bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition duration-300">
+        <img src="https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg" class="rounded-t-xl w-full h-48 object-cover">
+        <div class="p-4">
+          <h4 class="font-semibold">Modern Apartment</h4>
+          <p class="text-gray-500">₹80 Lakh - Mumbai</p>
+        </div>
+      </div>
+
+      <div class="card min-w-[300px] bg-white rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition duration-300">
+        <img src="https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg" class="rounded-t-xl w-full h-48 object-cover">
+        <div class="p-4">
+          <h4 class="font-semibold">Family House</h4>
+          <p class="text-gray-500">₹60 Lakh - Jaipur</p>
+        </div>
+      </div>
+
+    </div>
+
+    <button onclick="slideRight()" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white w-10 h-10 rounded-full shadow flex items-center justify-center">
+      <span class="material-symbols-rounded text-lg">arrow_forward_ios</span>
+    </button>
+
+  </div>
+
+</section>
+
+<div id="footer"></div>
+
+<script>
+  fetch("../components/navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+    const btn  = document.getElementById("menuBtn");
+    const menu = document.getElementById("mobileMenu");
+    if (btn && menu) {
+      btn.addEventListener("click", () => {
+        const isHidden = menu.classList.contains("hidden");
+        if (isHidden) {
+          menu.classList.remove("hidden");
+          menu.classList.add("flex");
+        } else {
+          menu.classList.add("hidden");
+          menu.classList.remove("flex");
+        }
+      });
+    }
+  });
+
+  fetch("../components/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+
+  const slider = document.getElementById("slider");
+  function slideLeft() {
+    slider.scrollBy({ left: -320, behavior: "smooth" });
+  }
+  function slideRight() {
+    slider.scrollBy({ left: 320, behavior: "smooth" });
+  }
+</script>
+
+</body>
+</html>

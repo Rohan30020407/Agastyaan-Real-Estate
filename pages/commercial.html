@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commercial Properties</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <div id="navbar"></div>
+
+  <!-- Heading -->
+  <div class="text-center mt-24 mb-8">
+    <h1 class="text-4xl font-bold text-gray-800">Commercial Properties</h1>
+    <p class="text-gray-500 mt-2">Find Shops, Showrooms, Offices & Warehouses</p>
+  </div>
+
+  <!-- Filters -->
+  <div class="max-w-6xl mx-auto px-6 mb-10 flex flex-wrap gap-4 justify-center">
+
+    <select id="locationFilter" class="px-4 py-2 rounded-lg border">
+      <option value="">Location</option>
+      <option value="Chandigarh">Chandigarh</option>
+      <option value="Mohali">Mohali</option>
+      <option value="Panchkula">Panchkula</option>
+    </select>
+
+    <select id="typeFilter" class="px-4 py-2 rounded-lg border">
+      <option value="">Type</option>
+      <option value="Shop">Shop</option>
+      <option value="Showroom">Showroom</option>
+      <option value="Office">Office</option>
+      <option value="Warehouse">Warehouse</option>
+    </select>
+
+    <select id="budgetFilter" class="px-4 py-2 rounded-lg border">
+      <option value="">Budget</option>
+      <option value="below20k">Below 20k</option>
+      <option value="20k-50k">20k - 50k</option>
+      <option value="50k+">50k+</option>
+    </select>
+
+    <button id="applyBtn" class="bg-yellow-500 text-white px-6 py-2 rounded-lg hover:bg-yellow-600">
+      Apply
+    </button>
+
+    <button id="resetBtn" class="bg-gray-300 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-400">
+      Reset
+    </button>
+
+  </div>
+
+  <!-- No Results Message -->
+  <div id="noResults" class="hidden text-center text-gray-500 text-lg mb-8">
+    😕 No properties found. Please try different filters.
+  </div>
+
+  <!-- Cards -->
+  <div id="cardGrid" class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 pb-16">
+
+    <!-- Card 1 -->
+    <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition"
+         data-location="Chandigarh" data-type="Shop" data-price="15000">
+      <img src="https://images.pexels.com/photos/264507/pexels-photo-264507.jpeg" class="w-full h-52 object-cover">
+      <div class="p-4">
+        <div class="flex items-center justify-between mb-2">
+          <span class="bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-full">FOR RENT</span>
+          <span class="text-xs text-gray-400">🏪 Shop</span>
+        </div>
+        <h2 class="text-xl font-bold">Shop</h2>
+        <p class="text-gray-500">Chandigarh</p>
+        <div class="flex justify-between items-center mt-3">
+          <span class="text-yellow-500 font-semibold">₹15,000 / month</span>
+          <button class="bg-black text-white text-center px-4 py-1 rounded hover:bg-gray-700">View More</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition"
+         data-location="Mohali" data-type="Showroom" data-price="35000">
+      <img src="https://images.pexels.com/photos/1797428/pexels-photo-1797428.jpeg" class="w-full h-52 object-cover">
+      <div class="p-4">
+        <div class="flex items-center justify-between mb-2">
+          <span class="bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-full">FOR RENT</span>
+          <span class="text-xs text-gray-400">🏬 Showroom</span>
+        </div>
+        <h2 class="text-xl font-bold">Showroom</h2>
+        <p class="text-gray-500">Mohali</p>
+        <div class="flex justify-between items-center mt-3">
+          <span class="text-yellow-500 font-semibold">₹35,000 / month</span>
+          <button class="bg-black text-white text-center px-4 py-1 rounded hover:bg-gray-700">View More</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition"
+         data-location="Panchkula" data-type="Office" data-price="25000">
+      <img src="https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg" class="w-full h-52 object-cover">
+      <div class="p-4">
+        <div class="flex items-center justify-between mb-2">
+          <span class="bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-full">FOR RENT</span>
+          <span class="text-xs text-gray-400">🏢 Office</span>
+        </div>
+        <h2 class="text-xl font-bold">Office Space</h2>
+        <p class="text-gray-500">Panchkula</p>
+        <div class="flex justify-between items-center mt-3">
+          <span class="text-yellow-500 font-semibold">₹25,000 / month</span>
+          <button class="bg-black text-white text-center px-4 py-1 rounded hover:bg-gray-700">View More</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition"
+         data-location="Mohali" data-type="Warehouse" data-price="55000">
+      <img src="https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg" class="w-full h-52 object-cover">
+      <div class="p-4">
+        <div class="flex items-center justify-between mb-2">
+          <span class="bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-full">FOR RENT</span>
+          <span class="text-xs text-gray-400">🏭 Warehouse</span>
+        </div>
+        <h2 class="text-xl font-bold">Warehouse</h2>
+        <p class="text-gray-500">Mohali</p>
+        <div class="flex justify-between items-center mt-3">
+          <span class="text-yellow-500 font-semibold">₹55,000 / month</span>
+          <button class="bg-black text-white text-center px-4 py-1 rounded hover:bg-gray-700">View More</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition"
+         data-location="Chandigarh" data-type="Office" data-price="40000">
+      <img src="https://images.pexels.com/photos/1170412/pexels-photo-1170412.jpeg" class="w-full h-52 object-cover">
+      <div class="p-4">
+        <div class="flex items-center justify-between mb-2">
+          <span class="bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-full">FOR RENT</span>
+          <span class="text-xs text-gray-400">🏢 Office</span>
+        </div>
+        <h2 class="text-xl font-bold">Office Space</h2>
+        <p class="text-gray-500">Chandigarh</p>
+        <div class="flex justify-between items-center mt-3">
+          <span class="text-yellow-500 font-semibold">₹40,000 / month</span>
+          <button class="bg-black text-white text-center px-4 py-1 rounded hover:bg-gray-700">View More</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="property-card bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition"
+         data-location="Chandigarh" data-type="Shop" data-price="18000">
+      <img src="https://images.pexels.com/photos/3965557/pexels-photo-3965557.jpeg" class="w-full h-52 object-cover">
+      <div class="p-4">
+        <div class="flex items-center justify-between mb-2">
+          <span class="bg-yellow-400 text-black text-xs font-bold px-2 py-1 rounded-full">FOR RENT</span>
+          <span class="text-xs text-gray-400">🏪 Shop</span>
+        </div>
+        <h2 class="text-xl font-bold">Shop</h2>
+        <p class="text-gray-500">Chandigarh</p>
+        <div class="flex justify-between items-center mt-3">
+          <span class="text-yellow-500 font-semibold">₹18,000 / month</span>
+          <button class="bg-black text-white text-center px-4 py-1 rounded hover:bg-gray-700">View More</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <script>
+    // Navbar fetch
+    fetch("../components/navbar.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+
+        const btn  = document.getElementById("menuBtn");
+        const menu = document.getElementById("mobileMenu");
+
+        if (btn && menu) {
+          btn.addEventListener("click", () => {
+            const isHidden = menu.classList.contains("hidden");
+            if (isHidden) {
+              menu.classList.remove("hidden");
+              menu.style.display = "block";
+            } else {
+              menu.classList.add("hidden");
+              menu.style.display = "none";
+            }
+          });
+        }
+
+        const links = document.querySelectorAll(".nav-link");
+        const currentPage = window.location.pathname.split("/").pop();
+        links.forEach(link => {
+          const linkPage = link.getAttribute("href").split("/").pop();
+          if (linkPage === currentPage) link.classList.add("active");
+        });
+      });
+
+    // Footer fetch
+    fetch("../components/footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+      });
+
+    // URL search
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlSearch = urlParams.get("search")?.toLowerCase().trim() || "";
+
+    window.addEventListener("DOMContentLoaded", () => {
+      if (urlSearch) applyFilters();
+    });
+
+    function applyFilters() {
+      const selectedLocation = document.getElementById("locationFilter").value;
+      const selectedType     = document.getElementById("typeFilter").value;
+      const selectedBudget   = document.getElementById("budgetFilter").value;
+
+      const cards      = document.querySelectorAll(".property-card");
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const cardLocation = card.dataset.location;
+        const cardType     = card.dataset.type;
+        const cardPrice    = parseInt(card.dataset.price);
+        const cardTitle    = card.querySelector("h2").textContent.toLowerCase();
+
+        const locationMatch = !selectedLocation || cardLocation === selectedLocation;
+        const typeMatch     = !selectedType     || cardType     === selectedType;
+
+        let budgetMatch = true;
+        if (selectedBudget === "below20k") budgetMatch = cardPrice < 20000;
+        if (selectedBudget === "20k-50k")  budgetMatch = cardPrice >= 20000 && cardPrice <= 50000;
+        if (selectedBudget === "50k+")     budgetMatch = cardPrice > 50000;
+
+        let searchMatch = true;
+        if (urlSearch) {
+          searchMatch = cardTitle.includes(urlSearch) ||
+                        cardLocation.toLowerCase().includes(urlSearch) ||
+                        cardType.toLowerCase().includes(urlSearch);
+        }
+
+        if (locationMatch && typeMatch && budgetMatch && searchMatch) {
+          card.style.display = "block";
+          visibleCount++;
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      document.getElementById("noResults").classList.toggle("hidden", visibleCount > 0);
+    }
+
+    function resetFilters() {
+      document.getElementById("locationFilter").value = "";
+      document.getElementById("typeFilter").value     = "";
+      document.getElementById("budgetFilter").value   = "";
+      document.querySelectorAll(".property-card").forEach(card => card.style.display = "block");
+      document.getElementById("noResults").classList.add("hidden");
+      window.history.replaceState({}, "", window.location.pathname);
+    }
+
+    document.getElementById("applyBtn").addEventListener("click", applyFilters);
+    document.getElementById("resetBtn").addEventListener("click", resetFilters);
+  </script>
+
+</body>
+</html>

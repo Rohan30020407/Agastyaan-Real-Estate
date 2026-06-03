@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+
+<div class="bg-white p-8 rounded-xl shadow-lg w-96">
+  
+  <h1 class="text-2xl font-bold text-center mb-4">
+    Agastyaan Real Estate
+  </h1>
+
+  <h2 class="text-xl font-bold text-center mb-6">Admin Login</h2>
+
+ 
+  <input id="email" type="email" placeholder="Enter admin email"
+    class="w-full p-2 border rounded mb-3">
+
+  
+  <input id="password" type="password" placeholder="Enter password"
+    class="w-full p-2 border rounded mb-3">
+
+  <button onclick="login()"
+    class="w-full bg-yellow-400 text-white p-2 rounded hover:bg-yellow-600">
+    Login
+  </button>
+
+
+  <p id="msg" class="text-center mt-3 text-sm"></p>
+
+  <p class="text-center mt-4 text-sm">
+    Don't have account? 
+    <a href="signup.html" class="text-blue-400">Sign up</a>
+  </p>
+
+</div>
+
+<script>
+function login() {
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+  let msg = document.getElementById("msg");
+  msg.innerText = "Logging in...";
+  msg.style.color = "gray";
+  fetch("http://localhost:4000/api/auth/login", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, password })
+  })
+    .then((res) => res.json().then((data) => ({ ok: res.ok, data })))
+    .then(({ ok, data }) => {
+      if (!ok) throw new Error(data.message || "Invalid credentials");
+      localStorage.setItem("admin_token", data.token);
+      localStorage.setItem("admin_user", JSON.stringify(data.user));
+      msg.innerText = "Login successful!";
+      msg.style.color = "green";
+      setTimeout(() => {
+        window.location.href = "/admin/admin.html";
+      }, 500);
+    })
+    .catch((err) => {
+      msg.innerText = err.message;
+      msg.style.color = "red";
+    });
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+
+<div class="bg-white p-8 rounded-xl shadow-lg w-96">
+  <h2 class="text-2xl font-bold text-center mb-6">Create Account</h2>
+
+  
+  <input id="name" type="text" placeholder="Enter Username"
+    class="w-full p-2 border rounded mb-3">
+
+  
+  <input id="password" type="password" placeholder="Enter Password"
+    class="w-full p-2 border rounded mb-3">
+
+  <input id="dob" type="date"
+    class="w-full p-2 border rounded mb-3">
+
+  <input id="location" type="text" placeholder="Enter Location"
+    class="w-full p-2 border rounded mb-4">
+
+  <button onclick="signup()"
+    class="w-full bg-green-500 text-white p-2 rounded hover:bg-green-600">
+    Sign Up
+  </button>
+
+  <p id="msg" class="text-center mt-3 text-sm"></p>
+
+  <p class="text-center mt-4 text-sm">
+    Already have account?
+    <a href="login.html" class="text-blue-500">Login</a>
+  </p>
+</div>
+
+<script>
+function signup() {
+  let name = document.getElementById("name").value.trim();
+  let password = document.getElementById("password").value.trim();
+  let dob = document.getElementById("dob").value;
+  let location = document.getElementById("location").value.trim();
+  let msg = document.getElementById("msg");
+
+
+  if (!name || !password || !dob || !location) {
+    msg.innerText = "Fill all fields!";
+    msg.style.color = "red";
+    return;
+  }
+
+  let users = JSON.parse(localStorage.getItem("users")) || [];
+
+  let exists = users.some(u => u.name === name);
+  if (exists) {
+    msg.innerText = "Username already taken!";
+    msg.style.color = "red";
+    return;
+  }
+
+  
+  users.push({
+    name,
+    password,
+    dob,
+    location
+  });
+
+  localStorage.setItem("users", JSON.stringify(users));
+
+  msg.innerText = "Signup successful!";
+  msg.style.color = "green";
+
+  setTimeout(() => {
+    window.location.href = "login.html";
+  }, 800);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Property Details</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <div id="navbar"></div>
+  <main class="max-w-5xl mx-auto pt-28 px-4 pb-10">
+    <div id="root" class="bg-white rounded-2xl shadow-lg p-6">Loading property...</div>
+  </main>
+  <div id="footer"></div>
+
+  <script>
+    const API = "http://localhost:4000/api";
+    const root = document.getElementById("root");
+    const id = new URLSearchParams(location.search).get("id");
+
+    async function load() {
+      if (!id) { root.textContent = "Invalid property id"; return; }
+      try {
+        const res = await fetch(`${API}/properties/${id}`);
+        const p = await res.json();
+        if (!res.ok) throw new Error(p.message || "Failed to load");
+        const image = p.images && p.images.length ? `http://localhost:4000${p.images[0]}` : "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2";
+        root.innerHTML = `
+          <img src="${image}" class="w-full h-80 object-cover rounded-xl mb-4" alt="${p.title}">
+          <h1 class="text-3xl font-bold">${p.title}</h1>
+          <p class="text-gray-500 mt-1">${p.location} • ${p.type.toUpperCase()}</p>
+          <p class="text-yellow-600 text-2xl font-bold mt-2">₹${Number(p.price).toLocaleString()}</p>
+          <p class="mt-4 text-gray-700">${p.description}</p>
+          <div class="mt-4">
+            <h3 class="font-semibold mb-1">Amenities</h3>
+            <div class="flex flex-wrap gap-2">${(p.amenities || []).map(a => `<span class="bg-gray-200 px-3 py-1 rounded-full text-sm">${a}</span>`).join("") || "Not specified"}</div>
+          </div>
+        `;
+      } catch (e) {
+        root.innerHTML = `<p class="text-red-600">${e.message}</p>`;
+      }
+    }
+
+    fetch("../components/navbar.html").then(r => r.text()).then(html => document.getElementById("navbar").innerHTML = html);
+    fetch("../components/footer.html").then(r => r.text()).then(html => document.getElementById("footer").innerHTML = html);
+    load();
+  </script>
+</body>
+</html>

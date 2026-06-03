@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Rohan Soni",
+      "email": "admin@agastyaan.com",
+      "passwordHash": "$2a$10$rEabOSV5RWgtDxVw9p8P5OlKkgWi0f2gHfwvXznZtmW4iuv0jvY8m",
+      "role": "admin",
+      "avatar": "/uploads/default-avatar.png",
+      "bio": "Master User",
+      "active": true,
+      "createdAt": "2026-05-01T00:00:00.000Z"
+    }
+  ],
+  "blogs": [],
+  "reviews": [
+    {
+      "id": 1,
+      "customerName": "vuy",
+      "rating": 5,
+      "comment": "iji",
+      "status": "pending",
+      "createdAt": "2026-05-04T18:14:32.768Z"
+    }
+  ],
+  "notifications": [],
+  "settings": {
+    "siteName": "Agastyaan Real Estate",
+    "siteEmail": "hello@agastyaan.com",
+    "maintenanceMode": false,
+    "allowPublicReviews": true,
+    "theme": "light"
+  },
+  "analytics": {
+    "users": [
+      10,
+      15,
+      18,
+      25,
+      35,
+      41,
+      52
+    ],
+    "revenue": [
+      10000,
+      12000,
+      16000,
+      18000,
+      24000,
+      28000,
+      31000
+    ],
+    "traffic": [
+      120,
+      150,
+      130,
+      210,
+      260,
+      300,
+      340
+    ],
+    "orders": 147
+  }
+}

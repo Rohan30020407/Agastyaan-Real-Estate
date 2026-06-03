@@ -1,0 +1,86 @@
+<nav class="fixed top-0 left-0 w-full z-50 bg-black backdrop-blur-md px-6 h-20 flex items-center justify-between rounded-b-[15px]">
+
+  <a href="/index.html" class="flex items-center gap-3">
+    <img src="/assets/images/Agastyaan-removebg.png" class="w-24 h-24 object-contain">
+    <span class="text-[22px] font-bold text-yellow-500">
+      Agastyaan<br class="md:hidden"> Real Estate
+    </span>
+  </a>
+
+  <div class="hidden md:flex items-center gap-8 font-medium">
+    <a href="/pages/ForBuyers.html" class="nav-link text-yellow-500 hover:text-yellow-300 transition">For Buyers</a>
+    <a href="/pages/ForTenent.html" class="nav-link text-yellow-500 hover:text-yellow-300 transition">For Tenants</a>
+    <a href="/pages/PlotsKothi.html" class="nav-link text-yellow-500 hover:text-yellow-300 transition">Plots/Kothi</a>
+    <a href="/pages/post-property.html" class="nav-link text-yellow-500 hover:text-yellow-300 transition">Post Property</a>
+  </div>
+
+  <div class="flex items-center gap-2">
+
+    <div class="relative group hidden md:block">
+      <button class="bg-yellow-400 text-white px-3 py-2 rounded-full text-sm hover:scale-110 transition">
+        <a href="/components/contactus.html">
+          <img src="/assets/images/customer-service.png" alt="call" class="w-5 h-5">
+        </a>
+      </button>
+    </div>
+
+    <div class="hidden md:flex items-center gap-3">
+      <a href="/auth/login.html"
+        class="bg-yellow-400 text-black px-4 py-2 rounded-full text-sm font-semibold hover:scale-110 transition">
+        Login
+      </a>
+
+      <a href="/auth/signup.html"
+        class="border-2 border-yellow-400 text-yellow-400 px-4 py-2 rounded-full text-sm font-semibold hover:bg-yellow-400 hover:text-black transition">
+        Sign Up
+      </a>
+    </div>
+
+    <button id="menuBtn"
+      class="md:hidden bg-yellow-400 text-black text-xl px-2 py-1 rounded-lg hover:bg-yellow-500 transition">
+      ☰
+    </button>
+
+  </div>
+</nav>
+
+<div id="mobileMenu"
+  class="hidden fixed top-20 left-0 bg-black w-full z-50 flex-col px-6 py-4 gap-4 md:hidden text-yellow-500">
+
+  <a href="/pages/ForBuyers.html" class="py-2">For Buyers</a>
+  <a href="/pages/ForTenent.html" class="py-2">For Tenants</a>
+  <a href="/pages/PlotsKothi.html" class="py-2">Plots/Kothi</a>
+  <a href="/pages/post-property.html" class="py-2">Post Property</a>
+
+  <hr class="border-yellow-400/30">
+
+  <a href="/components/contactus.html" class="py-2">Contact Us</a>
+  <a href="/auth/login.html" class="py-2">Login</a>
+  <a href="/auth/signup.html" class="py-2">Sign Up</a>
+
+</div>
+
+<script>
+  const btn = document.getElementById("menuBtn");
+  const menu = document.getElementById("mobileMenu");
+
+  if (btn && menu) {
+
+    btn.addEventListener("click", () => {
+
+      const isHidden = menu.classList.contains("hidden");
+
+      if (isHidden) {
+        menu.classList.remove("hidden");
+        menu.classList.add("flex");
+      }
+
+      else {
+        menu.classList.add("hidden");
+        menu.classList.remove("flex");
+      }
+
+    });
+
+  }
+</script>
